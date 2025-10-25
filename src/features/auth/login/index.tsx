@@ -4,16 +4,16 @@ import logo from '@/assets/icons/logo-1.svg'
 import LoginForm from '../components/loginForm'
 const Login = () => {
     return (
-        <section className='min-h-screen space-y-6'>
-            <div className='flex items-center gap-4 py-4'>
+        <section className='min-h-screen space-y-5'>
+            <div className='flex items-center gap-4 pt-4'>
                 <img src={logo} alt="Next flow logo" className='size-12' />
-                <h1 className='font-semibold text-lg'>Next Flow </h1>
+                <h4 className='font-semibold'>Next Flow </h4>
             </div>
 
-            <h1 className='text-2xl font-bold text-center'>
+            <h2 className='font-bold text-center'>
                 Simplify Your Utility Management
-            </h1>
-            <div className='flex flex-col md:flex-row  items-center  gap-5'>
+            </h2>
+            <div className='flex flex-col md:flex-row  items-center  gap-4'>
                 <img src={image} alt="Hero illustration photo" className='min-w-[100px] max-w-xl h-auto ' />
                 <LoginForm />
             </div>

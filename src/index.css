@@ -274,35 +274,35 @@
   h2 {
     @apply font-semibold leading-snug;
     /* min 1.5rem (24px), max 2.25rem (36px) */
-    font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
+    font-size: clamp(1.75rem, 1.8vw + 1rem, 2.75rem);
   }
 
   h3 {
     @apply font-semibold leading-snug;
     /* min 1.25rem (20px), max 1.875rem (30px) */
-    font-size: clamp(1.25rem, 1.5vw + 0.9rem, 1.875rem);
+    font-size: clamp(1.5rem, 1.5vw + 0.9rem, 2.5rem);
   }
 
   h4 {
     @apply font-medium leading-snug;
     /* min 1.125rem (18px), max 1.5rem (24px) */
-    font-size: clamp(1.125rem, 1.2vw + 0.8rem, 1.5rem);
+    font-size: clamp(1.25rem, 1.2vw + 0.8rem, 2.25rem);
   }
 
   h5 {
     @apply font-medium leading-snug;
     /* min 1rem (16px), max 1.25rem (20px) */
-    font-size: clamp(1rem, 0.8vw + 0.7rem, 1.25rem);
+    font-size: clamp(1.125rem, 0.8vw + 0.7rem, 2rem);
   }
 
   h6 {
-    @apply font-medium uppercase tracking-wide leading-snug;
+    @apply font-medium tracking-wide leading-snug;
     /* min 0.875rem (14px), max 1rem (16px) */
-    font-size: clamp(0.875rem, 0.6vw + 0.6rem, 1rem);
+    font-size: clamp(1rem, 0.6vw + 0.6rem, 1.75rem);
   }
 
   p {
-    @apply text-gray-700 leading-relaxed;
+    @apply leading-relaxed;
     /* min 1rem (16px), max 1.125rem (18px) */
     font-size: clamp(1rem, 0.6vw + 0.8rem, 1.125rem);
   }

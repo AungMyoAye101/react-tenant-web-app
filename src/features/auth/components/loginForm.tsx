@@ -36,7 +36,7 @@ const LoginForm = () => {
 
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 flex flex-col gap-6 px-4 max-w-lg  ">
-                <h1 className="text-lg font-bold">Login Your Account</h1>
+                <h3 className=" font-bold">Login Your Account</h3>
                 <FormField
                     control={form.control}
                     name="email"
