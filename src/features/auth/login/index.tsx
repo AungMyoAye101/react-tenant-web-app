@@ -1,4 +1,4 @@
-import React from 'react'
+
 import image from '@/assets/images/hero-illu.svg'
 import logo from '@/assets/icons/logo-1.svg'
 import LoginForm from '../components/loginForm'

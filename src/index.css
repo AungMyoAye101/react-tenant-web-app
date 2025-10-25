@@ -1,7 +1,11 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @custom-variant dark (&:is(.dark *));
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -74,7 +78,73 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+
+  /* Primary and Background */
+  --primary: #3E70FF;
+  --background: #F5F5F5;
+  --card-bg: #FFFAFA;
+
+  /* Button States */
+  --button-disable: #D4D4D8;
+  --button-disable-pressed: #CACACE;
+  --button-hover: #668EFF;
+  --button-pressed: #1955FF;
+  --button-text: #FFFFFF;
+
+  /* Warnings and Alerts */
+  --warning-hover: #F5D77A;
+  --warning-pressed: #EEB711;
+  --error: #EB5757;
+  --error-hover: #EE6D6D;
+  --error-pressed: #E84040;
+  --warning: #F2C94C;
+  --success: #27AE60;
+  --info: #2D9CDB;
+
+  /* Nest Flow */
+  --nest-flow-border: rgba(224, 224, 224, 0.5);
+  --nest-flow-footer-bg: #F4F7FB;
+  --nest-flow-barchart-bg: rgba(227, 229, 232, 0.5);
+
+  /* Status Colors */
+  --paid-text: #11321F;
+  --paid-bg: rgba(88, 218, 143, 0.5);
+  --pending-text: #605020;
+  --pending-bg: rgba(245, 212, 112, 0.5);
+  --overdue-text: #451717;
+  --overdue-bg: rgba(239, 118, 118, 0.5);
+
+  /* Typography */
+  --heading-text: #333333;
+  --body-text: #4F4F4F;
+  --caption-text: #828282;
+
+  /* Table */
+  --table-header: #EBEBEB;
+  --border-divider: #E0E0E0;
+  --profile-divider: #D4D4D8;
+
+  /* Bar Chart Colors */
+  --bar-electric: #0645F9;
+  --bar-water: #6B90FA;
+  --bar-wifi: #9DB5FB;
+
+  /* Bar Chart Text Styles */
+  --bar-text1-font-size: 7px;
+  --bar-text1-line-height: 12px;
+  --bar-text1-font-weight: 400;
+
+  --bar-text2-font-size: 9px;
+  --bar-text2-line-height: 13px;
+  --bar-text2-font-weight: 400;
+
+  --bar-text3-font-size: 9px;
+  --bar-text3-line-height: 13px;
+  --bar-text3-font-weight: 500;
 }
+
+
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -108,13 +178,138 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+
+  /* Primary */
+  --primary: #3E70FF;
+  --primary-hover: #668EFF;
+  --primary-pressed: #1955FF;
+
+  /* Background Levels */
+  --bg-level-1: #131620;
+  /* main background */
+  --bg-level-2: #262D40;
+  /* side nav / table heading */
+  --bg-level-3: #394360;
+  /* cards / table body */
+  --bg-level-4: #4D5A80;
+  /* borders / dividers */
+
+  /* Text Colors */
+  --heading-text: #F5F5F5;
+  --body-text: #E6E6E6;
+  --label-caption: #E0E0E0;
+
+  /* Status Colors */
+  --success: #6FCF97;
+  --warning: #F4D674;
+  --warning-hover: #F6DC88;
+  --warning-pressed: #F3D062;
+  --danger: #E26060;
+  --danger-hover: #E67979;
+  --danger-pressed: #DE4A4A;
+  --info: #3A98CE;
+
+  /* Disabled States */
+  --disable: #D4D4D8;
+  --disable-button-text: #4F4F4F;
+  --disable-pressed: #CACACE;
+
+  /* Status Backgrounds */
+  --paid-bg: #C6ECD6;
+  --overdue-bg: #E67979;
+  --pending-bg: #F6DC88;
+
+  /* Status Texts */
+  --paid-text: #11321F;
+  --overdue-text: #451717;
+  --pending-text: #605020;
+
+  /* Button Text & Icons */
+  --button-text: #FFFAFA;
+
+  /* Profile Divider */
+  --profile-divider: #D4D4D8;
+
+  /* Usage Bar Chart */
+  --usage-electric: #0645F9;
+  --usage-water: #6B90FA;
+  --usage-wifi: #9DB5FB;
+  --usage-bg: rgba(77, 90, 128, 0.4);
+  --usage-dash-line: rgba(77, 90, 128, 0.45);
+
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: "Lato", sans-serif;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #333;
+  }
+
+  p,
+  span {
+    color: #4F4F4F;
+
+  }
+
+  h1 {
+    @apply font-bold leading-tight;
+    /* min 1.875rem (30px), preferred viewport scaling, max 3rem (48px) */
+    font-size: clamp(2.25rem, 2vw + 1.5rem, 3.25rem);
+  }
+
+  h2 {
+    @apply font-semibold leading-snug;
+    /* min 1.5rem (24px), max 2.25rem (36px) */
+    font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
+  }
+
+  h3 {
+    @apply font-semibold leading-snug;
+    /* min 1.25rem (20px), max 1.875rem (30px) */
+    font-size: clamp(1.25rem, 1.5vw + 0.9rem, 1.875rem);
+  }
+
+  h4 {
+    @apply font-medium leading-snug;
+    /* min 1.125rem (18px), max 1.5rem (24px) */
+    font-size: clamp(1.125rem, 1.2vw + 0.8rem, 1.5rem);
+  }
+
+  h5 {
+    @apply font-medium leading-snug;
+    /* min 1rem (16px), max 1.25rem (20px) */
+    font-size: clamp(1rem, 0.8vw + 0.7rem, 1.25rem);
+  }
+
+  h6 {
+    @apply font-medium uppercase tracking-wide leading-snug;
+    /* min 0.875rem (14px), max 1rem (16px) */
+    font-size: clamp(0.875rem, 0.6vw + 0.6rem, 1rem);
+  }
+
+  p {
+    @apply text-gray-700 leading-relaxed;
+    /* min 1rem (16px), max 1.125rem (18px) */
+    font-size: clamp(1rem, 0.6vw + 0.8rem, 1.125rem);
+  }
+
+  small {
+    @apply text-gray-600;
+    /* min 0.8125rem (13px), max 0.9375rem (15px) */
+    font-size: clamp(0.8125rem, 0.4vw + 0.6rem, 0.9375rem);
   }
 }
