@@ -1,6 +1,7 @@
 import logo from "@/assets/icons/logo-1.svg"
 import { Link, useLocation } from "@tanstack/react-router"
 import { Button } from "../ui/button"
+import { navLinks } from "@/app/config/constant"
 const Navbar = () => {
     const { pathname } = useLocation()
     console.log(pathname)
@@ -15,6 +16,16 @@ const Navbar = () => {
                     <h4 className="font-semibold">Next Flow</h4>
                 </div>
             </Link>
+            <div>
+                {
+                    navLinks.map((nav, i) => (
+                        <Button variant={'link'} key={i}>
+                            <Link to={nav.href}>{nav.name}</Link>
+                        </Button>
+                    ))
+                }
+
+            </div>
             {/* Navigtion */}
             <div className="flex items-center gap-2">
                 <Link to={'/auth/sigup'}>

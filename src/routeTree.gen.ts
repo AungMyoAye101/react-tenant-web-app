@@ -10,12 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CustomerserviceIndexRouteImport } from './routes/customerservice/index'
+import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as BillingIndexRouteImport } from './routes/billing/index'
 import { Route as AuthSigupRouteImport } from './routes/auth/sigup'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomerserviceIndexRoute = CustomerserviceIndexRouteImport.update({
+  id: '/customerservice/',
+  path: '/customerservice/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/contact/',
+  path: '/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BillingIndexRoute = BillingIndexRouteImport.update({
+  id: '/billing/',
+  path: '/billing/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthSigupRoute = AuthSigupRouteImport.update({
@@ -33,30 +51,61 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/sigup': typeof AuthSigupRoute
+  '/billing': typeof BillingIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/customerservice': typeof CustomerserviceIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/sigup': typeof AuthSigupRoute
+  '/billing': typeof BillingIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/customerservice': typeof CustomerserviceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/sigup': typeof AuthSigupRoute
+  '/billing/': typeof BillingIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/customerservice/': typeof CustomerserviceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth/login' | '/auth/sigup'
+  fullPaths:
+    | '/'
+    | '/auth/login'
+    | '/auth/sigup'
+    | '/billing'
+    | '/contact'
+    | '/customerservice'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth/login' | '/auth/sigup'
-  id: '__root__' | '/' | '/auth/login' | '/auth/sigup'
+  to:
+    | '/'
+    | '/auth/login'
+    | '/auth/sigup'
+    | '/billing'
+    | '/contact'
+    | '/customerservice'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth/login'
+    | '/auth/sigup'
+    | '/billing/'
+    | '/contact/'
+    | '/customerservice/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthLoginRoute: typeof AuthLoginRoute
   AuthSigupRoute: typeof AuthSigupRoute
+  BillingIndexRoute: typeof BillingIndexRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+  CustomerserviceIndexRoute: typeof CustomerserviceIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +115,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customerservice/': {
+      id: '/customerservice/'
+      path: '/customerservice'
+      fullPath: '/customerservice'
+      preLoaderRoute: typeof CustomerserviceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/billing/': {
+      id: '/billing/'
+      path: '/billing'
+      fullPath: '/billing'
+      preLoaderRoute: typeof BillingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/sigup': {
@@ -89,6 +159,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthLoginRoute: AuthLoginRoute,
   AuthSigupRoute: AuthSigupRoute,
+  BillingIndexRoute: BillingIndexRoute,
+  ContactIndexRoute: ContactIndexRoute,
+  CustomerserviceIndexRoute: CustomerserviceIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
