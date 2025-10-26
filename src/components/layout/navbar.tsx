@@ -9,7 +9,7 @@ const Navbar = () => {
         return;
     }
     return (
-        <nav className="flex justify-between items-center gap-4 py-2 border-b">
+        <nav className="flex justify-between items-center gap-4 py-2 ">
             <Link to={'/'} >
                 <div className="flex items-center gap-2">
                     <img src={logo} alt="Next flow logo" className="size-10" />
@@ -19,7 +19,13 @@ const Navbar = () => {
             <div>
                 {
                     navLinks.map((nav, i) => (
-                        <Button variant={'link'} key={i}>
+                        <Button
+                            variant={'link'}
+                            key={i}
+                            className={`text-heading-text hover:bg-accent
+                            ${nav.href === pathname ? "text-primary" : ''}
+                            `}
+                        >
                             <Link to={nav.href}>{nav.name}</Link>
                         </Button>
                     ))
