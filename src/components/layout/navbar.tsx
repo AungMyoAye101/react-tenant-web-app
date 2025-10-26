@@ -22,7 +22,7 @@ const Navbar = () => {
                         <Button
                             variant={'link'}
                             key={i}
-                            className={`text-heading-text hover:bg-accent
+                            className={`text-heading-text hover:bg-accent text-lg font-semibold
                             ${nav.href === pathname ? "text-primary" : ''}
                             `}
                         >
