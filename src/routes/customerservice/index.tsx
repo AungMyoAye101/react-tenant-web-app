@@ -1,3 +1,4 @@
+import CustomerService from '@/features/customer-service'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/customerservice/')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/customerservice/')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/customerservice/"!</div>
+  return <CustomerService />
 }

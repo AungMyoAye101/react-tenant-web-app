@@ -264,6 +264,10 @@
 
   }
 
+  section {
+    @apply py-10 space-y-12
+  }
+
   h1 {
     @apply font-bold leading-tight;
     /* min 1.875rem (30px), preferred viewport scaling, max 3rem (48px) */

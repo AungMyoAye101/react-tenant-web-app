@@ -4,7 +4,7 @@ import ViewDetailCard from "./view-detail-card"
 
 const Overview = () => {
     return (
-        <section className="py-10 space-y-10">
+        <section className=" space-y-10">
             <div className="flex justify-between items-center gap-4 ">
                 <div className="max-w-sm">
                     <h4 className="font-bold">Overview</h4>
