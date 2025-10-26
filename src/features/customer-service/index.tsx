@@ -8,7 +8,7 @@ import {
 import History from "./history"
 import ServiceForm from "./serviceForm"
 import ContactInfo from "./components/ContactInfo"
-import FAQ from "./components/FAQ"
+
 
 const CustomerService = () => {
     return (
@@ -31,7 +31,7 @@ const CustomerService = () => {
                     <div className="flex-1 space-y-6">
                         <TabsContent value="serviceForm"><ServiceForm /></TabsContent>
                         <TabsContent value="history"> <History /></TabsContent>
-                        <FAQ />
+
                     </div>
                 </div>
 

@@ -1,4 +1,13 @@
 import { Button } from "@/components/ui/button";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/components/ui/pagination"
 
 export const dummyServices = [
     {
@@ -76,42 +85,71 @@ export const dummyServices = [
 
 const History = () => {
     return (
-        <div className="bg-white px-4 py-6 space-y-6 rounded-lg">
-            <div>
-
-                <h4 className="font-semibold">My Service History</h4>
-                <p>
-                    The status of your submitted requests
-                </p>
-            </div>
+        <div>
 
 
-            {
-                dummyServices.map((u, i) => (
-                    <div key={i} className="px-4 py-6 bg-white border shadow rounded-md">
-                        <div className="flex justify-between items-center mb-4">
+            <div className="bg-white px-4 py-6 space-y-6 rounded-lg mb-4">
+                <div>
 
-                            <div className="flex items-center gap-4 ">
-                                <h5 className="font-semibold">
-                                    {u.category}
-                                </h5>
-                                <Button size={'sm'}
-                                    className={`${u.status === "Resolved" ? "bg-green-300" : u.status === "Ongoing" ? "bg-sky-300" : "bg-amber-300"} text-black`}
-                                >{u.status}</Button>
-                                <Button variant={'outline'} size={'sm'}
-                                    className={`${u.priorityLevel === "High" ? "bg-red-300" : u.priorityLevel === "Medium" ? "border-amber-400" : ""} text-black`}
-                                >{u.priorityLevel}</Button>
+                    <h4 className="font-semibold">My Service History</h4>
+                    <p>
+                        The status of your submitted requests
+                    </p>
+                </div>
+
+
+                {
+                    dummyServices.map((u, i) => (
+                        <div key={i} className="px-4 py-6 bg-white border shadow rounded-md">
+                            <div className="flex justify-between items-center mb-4">
+
+                                <div className="flex items-center gap-4 ">
+                                    <h5 className="font-semibold">
+                                        {u.category}
+                                    </h5>
+                                    <Button size={'sm'}
+                                        className={`${u.status === "Resolved" ? "bg-green-300" : u.status === "Ongoing" ? "bg-sky-300" : "bg-amber-300"} text-black`}
+                                    >{u.status}</Button>
+                                    <Button variant={'outline'} size={'sm'}
+                                        className={`${u.priorityLevel === "High" ? "bg-red-300" : u.priorityLevel === "Medium" ? "border-amber-400" : ""} text-black`}
+                                    >{u.priorityLevel}</Button>
+                                </div>
+                                <p className="text-sm justify-end font-semibold">{u.date.toLocaleDateString()}</p>
                             </div>
-                            <p className="text-sm justify-end font-semibold">{u.date.toLocaleDateString()}</p>
+                            <p>{u.description}</p>
                         </div>
-                        <p>{u.description}</p>
-                    </div>
-                ))
-            }
-
-
+                    ))
+                }
+            </div>
+            <Pagination>
+                <PaginationContent>
+                    <PaginationItem>
+                        <PaginationPrevious href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink href="#">1</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink href="#" isActive>
+                            2
+                        </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink href="#">3</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationEllipsis />
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationNext href="#" />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
         </div>
     )
 }
 
 export default History
+
+
+
