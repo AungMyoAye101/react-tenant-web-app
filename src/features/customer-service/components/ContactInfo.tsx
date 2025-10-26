@@ -24,7 +24,7 @@ const contactData = [
 const colors = ['border-amber-500', 'border-green-500', 'border-blue-500']
 const ContactInfo = () => {
     return (
-        <div className='min-w-xs max-w-sm bg-white  shadow-md px-4 py-6 rounded-xl space-y-4'>
+        <div className='min-w-xs max-w-sm h-fit bg-white  shadow-md px-4 py-6 rounded-xl space-y-4'>
             <div className='flex items-center gap-2'>
                 <SquareUserRound />
                 <h5 className='font-semibold'>Contact Us</h5>

@@ -2,7 +2,9 @@
 
 const FAQ = () => {
     return (
-        <div>FAQ</div>
+        <div>
+
+        </div>
     )
 }
 
