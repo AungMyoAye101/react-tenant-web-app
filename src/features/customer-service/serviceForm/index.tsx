@@ -41,7 +41,7 @@ const ServiceForm = () => {
         <div className="space-y-10">
 
 
-            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white shadow rounded-lg px-4 py-6 flex flex-col gap-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white shadow rounded-lg p-6 flex flex-col gap-6">
                 <div>
                     <h4 className="font-semibold">Submit New Request</h4>
                     <p>Fill out the form below and we'll get back to you as soon as possible</p>
@@ -59,7 +59,7 @@ const ServiceForm = () => {
                                     onValueChange={field.onChange}
 
                                 >
-                                    <SelectTrigger aria-invalid={fieldState.invalid} >
+                                    <SelectTrigger aria-invalid={fieldState.invalid} className="border-gray-400 p-5" >
                                         <SelectValue placeholder="Description..." />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -88,7 +88,7 @@ const ServiceForm = () => {
                                     value={field.value}
                                     onValueChange={field.onChange}
                                 >
-                                    <SelectTrigger className="border-input-border-gray-400">
+                                    <SelectTrigger className="border-gray-400 p-5">
                                         <SelectValue placeholder="Pirority Level..." />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -120,7 +120,7 @@ const ServiceForm = () => {
                                     id="description"
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Description..."
-                                    className="min-h-[120px] border border-gray-400 rounded p-2"
+                                    className="min-h-40 border border-gray-400 rounded p-5"
                                 />
                                 {fieldState.invalid && (
                                     <FieldError errors={[fieldState.error]} />

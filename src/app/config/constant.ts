@@ -8,8 +8,8 @@ export const navLinks = [
         href: "/customerservice"
     },
     {
-        name: 'Contact',
-        href: "/contact"
+        name: 'Contract',
+        href: "/contract"
     },
     {
         name: 'My Billing',

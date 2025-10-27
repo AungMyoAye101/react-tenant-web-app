@@ -4,12 +4,11 @@ import { Button } from "../ui/button"
 import { navLinks } from "@/app/config/constant"
 const Navbar = () => {
     const { pathname } = useLocation()
-    console.log(pathname)
     if (pathname === '/auth/login' || pathname === "/auth/signup") {
         return;
     }
     return (
-        <nav className="flex justify-between items-center gap-4 py-2 ">
+        <nav className="flex justify-between items-center gap-4 py-4 ">
             <Link to={'/'} >
                 <div className="flex items-center gap-2">
                     <img src={logo} alt="Next flow logo" className="size-10" />
