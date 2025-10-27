@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import ViewDetailCard from "./view-detail-card"
+import ElectricChart from "./charts/electricChart"
 
 
 const Overview = () => {
@@ -18,6 +19,7 @@ const Overview = () => {
                 </Button>
             </div>
             <ViewDetailCard />
+            <ElectricChart />
         </section>
     )
 }
